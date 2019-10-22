@@ -1,31 +1,42 @@
 Bacteria [] richard;
 void setup()   
- {     
- 	background(500);
- 	framerate(30);
- 	for(int i=0; i<1;i++){
+ { 
+ size(500,500);    
+ 	background(100);
+ 	frameRate(30);
+ 	richard = new Bacteria[50];
+ 	for(int i=0; i<50;i++){
  		richard[i]=new Bacteria();
  	}
  }   
  void draw()   
  {    
  	for(int i=0; i<richard.length;i++){
-		Bacteria.show();
- 		Bacteria.walk(); 
+		richard[i].show();
+ 		richard[i].walk(); 
  	}
  }  
  class Bacteria    
  {     
- 	int myX, int myY;
- 	{
- 		myX=750;
+ 	int myX,myY;
+
+ 	Bacteria(){
+ 		myX=250;
  		myY=250;
+ 		
  	}
  	void walk(){
  		myX = myX + (int)(Math.random()*3)-1;
  		myY = myY + (int)(Math.random()*3)-1;
  	}
  	void show(){
- 		ellipse(myX,myY,50,50);
+ 		
+ 		fill((int)(Math.random()*1000), (int)(Math.random()*1000), (int)(Math.random()*1000));
+ 		ellipse(myX+8,myY+8,30,30);
+ 		ellipse(myX+8,myY-8,30,30);
+ 		ellipse(myX-8,myY+8,30,30);
+ 		ellipse(myX-8,myY-8,30,30);
+ 		ellipse(myX,myY,30,30);
+ 		
  	}
  }    
