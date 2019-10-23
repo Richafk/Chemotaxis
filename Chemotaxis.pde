@@ -4,8 +4,8 @@ void setup()
  size(500,500);    
  	background(100);
  	frameRate(30);
- 	richard = new Bacteria[50]; //space
- 	for(int i=0; i<50;i++){
+ 	richard = new Bacteria[100]; //space
+ 	for(int i=0; i<100;i++){
  		richard[i]=new Bacteria(); //constructs and puts into space
  	}
  }   
