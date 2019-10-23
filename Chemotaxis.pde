@@ -4,28 +4,30 @@ void setup()
  size(500,500);    
  	background(100);
  	frameRate(30);
- 	richard = new Bacteria[50];
+ 	richard = new Bacteria[50]; //space
  	for(int i=0; i<50;i++){
- 		richard[i]=new Bacteria();
+ 		richard[i]=new Bacteria(); //constructs and puts into space
  	}
  }   
  void draw()   
  {    
  	for(int i=0; i<richard.length;i++){
 		richard[i].show();
- 		richard[i].walk(); 
+ 		richard[i].move(); 
  	}
  }  
  class Bacteria    
  {     
  	int myX,myY;
+ 	int myColor;
 
  	Bacteria(){
  		myX=250;
  		myY=250;
+ 		myColor = color((int)(Math.random()*1000));
  		
  	}
- 	void walk(){
+ 	void move(){
  		myX = myX + (int)(Math.random()*3)-1;
  		myY = myY + (int)(Math.random()*3)-1;
  	}
